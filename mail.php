@@ -7,6 +7,7 @@
  */
 
 echo $name=$_POST['name'];
+
 echo "<br>";
 echo $email=$_POST['email'];
 echo "<br>";
@@ -30,12 +31,13 @@ if (isset($_POST['name'])){
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $to = "rizkancool@gmail.com";
+    $to = "rizkan@itmartx.net";
     $from = $email;
     $s = 'contact form ajax';
-    $m = '<b>Name:</b>'.$name;
+    $m = '<style: font-weight: bold>Name:</style:>'.$name.'<br/> <strong>E-mail:</strong>'.$email.'<br/> <strong>Subject:</strong>'.$subject.'<br/> <strong>message:</strong>'.$message.'<br/>';
+    $h = 'Content-type: text/html; charset=UTF-8' . PHP_EOL;
     $h = "from: $from\n";
-    $h = "MIME-Version: 1.0\n";
+    $h = "MIME-Version: 1.1\n";
 
     if ( mail($to, $s, $m, $h)){
         echo "success";
